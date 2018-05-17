@@ -71,7 +71,7 @@
           vue-loader
         </a>
       </li>
-      <li>
+      <li><x></x>
         <a
           href="https://github.com/vuejs/awesome-vue"
           target="_blank"
@@ -88,7 +88,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js'
     }
   }
 }
