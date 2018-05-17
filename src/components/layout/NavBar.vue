@@ -6,11 +6,7 @@
                 <a class="navbar-brand" href="#">{{websiteName}}</a>
             </div>
             <ul class="nav navbar-nav">
-
-                <li v-for ="i in items"  items.findIndex(i) == 0class="active"><a href="#">Home</a></li>
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
-                <li><a href="#">Page 3</a></li>
+                <li v-for ="(i, index) in items" :key=index ><a :href="i.href">{{i.name}}</a></li>
             </ul>
         </div>
     </nav>
@@ -18,15 +14,15 @@
 </template>
 
 <script>
-    export default {
-        name: 'NavBar',
-        props: ['items','websiteName'],
-        data () {
-            return {
-                msg: 'Welcome to Your Vue.js'
-            }
-        }
+export default {
+  name: 'NavBar',
+  props: ['items', 'websiteName'],
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js'
     }
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
