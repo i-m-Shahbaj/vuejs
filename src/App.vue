@@ -1,16 +1,7 @@
 <template>
     <div id="app">
-        <nav-bar :websiteName="websiteName" :items="items"></nav-bar>
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-8">
-        <Custom-Carousel :items="images"></Custom-Carousel>
-            </div>
-            <div class="col-md-2">
-
-            </div>
-        </div>
+        <nav-bar v-if="$route.path==='/register' || $route.path==='/login' ? false : true" :websiteName="websiteName" :items="items"></nav-bar>
+        <router-view :key="$route.name"></router-view>
         </div>
 
 </template>
@@ -19,7 +10,7 @@
 /* eslint-disable */
 import HelloWorld from './components/HelloWorld.vue';
 import NavBar from './components/layout/NavBar.vue';
-import CustomCarousel from './components/Home.vue';
+
 export default{
   name: 'App',
   data()  {
@@ -29,19 +20,11 @@ export default{
     {name:'home',href:"/home"},
     {name:'about-us',href:"/about -us"},
     ],
-    images: [
-    ]
   }
   },
   components: {
-    NavBar,
-    CustomCarousel
+    NavBar
   },
-  created(){
-      this.$http.get('https://jsonplaceholder.typicode.com/photos/').then(function(data){
-          this.images = data.body.slice(0,40);
-      });
-  }
 }
 </script>
 

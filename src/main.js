@@ -9,6 +9,7 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 Vue.use(VueResource)
+Vue.http.options.root = 'http://example.localhost/api/v1'
 new Vue({
   el: '#app',
   router,

@@ -1,21 +1,21 @@
 <template>
-    <div>
-    <carousel :navigationEnabled="true">
-        <slide v-for="(i,index) in items" :key="index">
-            <img :src="i.url" height="100px" width ="100px"/>
-        </slide>
-    </carousel>
-    </div>
+    <Custom-Carousel :items="images"></Custom-Carousel>
 </template>
 <script>
-import { Carousel, Slide } from 'vue-carousel'
-export default{
-  name: 'CustomCarousel',
-  props: ['items'],
-
+import CustomCarousel from './custom/carousel.vue'
+export default {
+  data () {
+    return {
+      images: []
+    }
+  },
   components: {
-    Carousel,
-    Slide
+    CustomCarousel
+  },
+  created () {
+    this.$http.get('https://jsonplaceholder.typicode.com/photos/').then(function (data) {
+      this.images = data.body.slice(0, 40)
+    })
   }
 }
 </script>
