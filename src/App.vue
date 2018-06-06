@@ -17,8 +17,8 @@ export default{
       return {
     websiteName:"Practice.com",
     items:[
-    {name:'home',href:"/home"},
-    {name:'about-us',href:"/about -us"},
+    {name:'Home',href:"/home"},
+    {name:'Profile',href:"/profile"},
     ],
   }
   },
