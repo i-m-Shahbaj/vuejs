@@ -1,16 +1,26 @@
 <template>
-    <Custom-Carousel :items="images"></Custom-Carousel>
+    <main :posts="Posts"></main>
 </template>
 <script>
-import CustomCarousel from './custom/carousel.vue'
+import main from './layout/main.vue'
 export default {
+  name: 'home',
   data () {
     return {
-      images: []
+      Posts: [
+        {
+          user: [{
+            name: 'shahbaj',
+            display: '#',
+            location: 'Jawahar circle',
+            time: '12 pm'
+          }]
+        }
+      ]
     }
   },
   components: {
-    CustomCarousel
+    main
   },
   created () {
     this.$http.get('https://jsonplaceholder.typicode.com/photos/').then(function (data) {
