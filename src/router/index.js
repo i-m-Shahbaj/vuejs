@@ -8,10 +8,12 @@ import register from '@/components/register'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  hashbang: false,
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'dashboard',
       component: Home
     },
     {

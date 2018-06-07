@@ -34,7 +34,8 @@ export default {
         email: null,
         password: null,
         remember_me: true
-      }
+      },
+      Errors: []
     }
   },
   methods () {

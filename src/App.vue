@@ -15,10 +15,11 @@ export default{
   name: 'App',
   data()  {
       return {
-    websiteName:"Practice.com",
+    websiteName:"PhotoGrame",
     items:[
-    {name:'home',href:"/home"},
-    {name:'about-us',href:"/about -us"},
+    {icon:'compass',href:'#'},
+    {icon:'heart',href:'#'},
+      {icon:'user',href:'/profile'}
     ],
   }
   },
@@ -35,6 +36,6 @@ export default{
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+        margin-top: opx;
     }
 </style>
