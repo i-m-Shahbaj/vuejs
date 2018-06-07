@@ -8,6 +8,8 @@ import register from '@/components/register'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  hashbang: false,
   routes: [
     {
       path: '/',

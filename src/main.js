@@ -1,18 +1,31 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+/* eslint-disable */
 import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 import VueResource from 'vue-resource'
 import store from './store'
-window.$ = require('jquery')
-window.JQuery = require('jquery')
-Vue.use(Vuex)
-Vue.config.productionTip = false
+window.$ = window.JQuery = require('jquery')
+import fontawesome from '@fortawesome/fontawesome'
+import brands from '@fortawesome/fontawesome-free-brands'
+import faSpinner from '@fortawesome/fontawesome-free-solid/faSpinner'
+import faSearch from '@fortawesome/fontawesome-free-solid/faSearch'
+import faHeart from '@fortawesome/fontawesome-free-solid/faHeart'
+import faCompass from '@fortawesome/fontawesome-free-solid/faCompass'
+import faUser from '@fortawesome/fontawesome-free-solid/faUser'
+
+import '@fortawesome/fontawesome/styles.css';
+fontawesome.config = {
+  autoAddCss: false,
+};
+fontawesome.library.add(brands, faSpinner)
+fontawesome.library.add(brands, faSearch)
+fontawesome.library.add(brands, faHeart)
+fontawesome.library.add(brands, faCompass)
+fontawesome.library.add(brands, faUser)
 Vue.use(VueResource)
-Vue.use(Vuex)
-Vue.http.options.root = 'http://example.localhost/api/v1'
 new Vue({
   el: '#app',
   router,

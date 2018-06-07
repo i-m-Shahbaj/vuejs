@@ -17,8 +17,9 @@ export default{
       return {
     websiteName:"PhotoGrame",
     items:[
-    {name:'Home', href:"/home"},
-    {name:'Profile', href:"/profile"},
+    {icon:'compass',href:'#'},
+    {icon:'heart',href:'#'},
+      {icon:'user',href:'/profile'}
     ],
   }
   },
