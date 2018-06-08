@@ -25,6 +25,14 @@
                                         <label class="control-label error" v-if="Errors.last_name">{{ Errors.last_name[0] }}</label>
                                     </div>
                                 </div>
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="fg-line">
+                                        <div class="form-group">
+                                            <input type="text" name="username" id="username" class="form-control input-sm" placeholder="User Name" v-model="credential.userName" required :change="checkUser()">
+                                        </div>
+                                        <label class="control-label error" v-if="Errors.last_name">{{ Errors.last_name[0] }}</label>
+                                    </div>
+                                </div>
                             </div>
                             <div class="fg-line">
                             <div class="form-group">
@@ -60,7 +68,8 @@ export default {
         first_name: null,
         last_name: null,
         password: null,
-        contact: null
+        contact: null,
+        userName: null
       },
       confirm: null,
       Errors: []
@@ -78,6 +87,11 @@ export default {
       }, (response) => {
         this.Errors = response.data.error.details
       })
+    },
+    checkUser(){
+      const endpoint = 'auth/checkUser'
+      $this.$http.get(endpoint, this.)
+
     }
   }
 }

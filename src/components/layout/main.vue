@@ -38,7 +38,7 @@ export default{
     padding:6px;
 }
 .post{
-    background-color:mintcream;
+    background-color:aquamarine;
     padding:2px;
     border:2px solid black;
     margin-top:40px;
@@ -48,7 +48,7 @@ h5{
     color:red;
 }
 .image{
-    border:2px solid black;
+    //border:2px solid black;
 }
 .user-post{
     width:100%;
