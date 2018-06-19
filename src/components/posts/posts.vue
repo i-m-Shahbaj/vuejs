@@ -2,7 +2,8 @@
     <div class="row">
         <div class="col-md-4 posts" v-for="(i, index) in images" :key=index>
             <div class="img">
-                <img :src="i.src" :id="`img-${i.name}`" class="img"/>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <img :src="i.src" :id="`img-${i.name}`" class="img"/></button>
             </div>
         </div>
     </div>
@@ -13,7 +14,7 @@ export default{
 }
 </script>
 <style>
-.img>img {
+.img>button>img {
     width: 100%;
     height: 100%;
 }

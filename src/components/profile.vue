@@ -52,11 +52,13 @@
             </div>
         </div>
     </div>
+    <modal :comments="comments" :profile="profileInfo" ></modal>
 </div>
 </template>
 <script >
 import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
 import Posts from './posts/posts.vue'
+import modal from './layout/modal.vue'
 export default{
   data () {
     return {
@@ -68,6 +70,11 @@ export default{
         following: '199',
         postCount: '12'
       },
+      comments: [
+        {user: 'shahbaj khan', content: 'this is comment'},
+        {user: 'sjflksdjf', content: 'thsi si second comments'},
+        {user: 'sfsdfsdfs', content: 'sjflsdjfskld'}
+      ],
       posts: [
         {src: require('../assets/1.jpg'), name: '1'},
         {src: require('../assets/1.jpg'), name: '2'},
@@ -87,7 +94,8 @@ export default{
   },
   components: {
     FontAwesomeIcon,
-    Posts
+    Posts,
+    modal
   }
 }
 </script>
