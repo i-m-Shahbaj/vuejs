@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-md-4 posts" v-for="(i, index) in images" :key=index>
+        <div class="col-md-4 posts" v-for="(i, index) in images" :key=index v-on:click="openPost">
             <div class="img">
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 <img :src="i.src" :id="`img-${i.name}`" class="img"/></button>
@@ -10,7 +10,12 @@
 </template>
 <script type="text/babel ">
 export default{
-  props: ['images']
+  props: ['images'],
+  methods: {
+    openPost: function (event) {
+      document.getElementById('myPost').style.width = '100%'
+    }
+  }
 }
 </script>
 <style>

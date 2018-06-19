@@ -52,7 +52,7 @@
             </div>
         </div>
     </div>
-    <modal :comments="comments" :profile="profileInfo" ></modal>
+    <modal :comments="comments" :post="post" :profileInfo="profileInfo" ></modal>
 </div>
 </template>
 <script >
@@ -69,6 +69,9 @@ export default{
         followers: '12',
         following: '199',
         postCount: '12'
+      },
+      post: {
+        image_url: require('../assets/2.png')
       },
       comments: [
         {user: 'shahbaj khan', content: 'this is comment'},
